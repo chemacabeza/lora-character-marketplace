@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: lora-marketplace
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lora_db
+    username: lora_user
+    password: lora_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate # Using our init.sql instead of auto-generation
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+stripe:
+  api-key: ${STRIPE_API_KEY:sk_test_mock}
+  webhook-secret: ${STRIPE_WEBHOOK_SECRET:whsec_mock}
+
+aws:
+  s3:
+    bucket-name: ${AWS_S3_BUCKET:lora-marketplace-prod}
+    region: ${AWS_REGION:us-east-1}
+
+cors:
+  allowed-origins: "http://localhost:3000"
