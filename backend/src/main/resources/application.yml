@@ -1,17 +1,17 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
     name: lora-marketplace
   datasource:
-    url: jdbc:postgresql://localhost:5432/lora_db
-    username: lora_user
-    password: lora_password
+    url: jdbc:postgresql://${PGHOST:localhost}:${PGPORT:5432}/${PGDATABASE:lora_db}
+    username: ${PGUSER:lora_user}
+    password: ${PGPASSWORD:lora_password}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: validate # Using our init.sql instead of auto-generation
+      ddl-auto: update # Automatically create tables if they don't exist
     show-sql: true
     properties:
       hibernate:
