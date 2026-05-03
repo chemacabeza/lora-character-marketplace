@@ -1,8 +1,16 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 
 // Mock data
-const MOCK_PRODUCT = { id: 1, name: "Emma from Ireland", description: "Highly consistent portrait LoRA.", baseModel: "SDXL", priceCents: 999 };
+const MOCK_PRODUCT = { 
+  id: 1, 
+  name: "Emma from Ireland", 
+  description: "Highly consistent portrait LoRA.", 
+  baseModel: "SDXL", 
+  priceCents: 999,
+  image: "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c0c1a0f6-7a0a-4319-96c8-e1f91aa9a311/original=true/129099726.jpeg"
+};
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const [loading, setLoading] = useState(false);
@@ -31,8 +39,18 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       {/* Image Gallery Mock */}
       <div className="space-y-4">
-        <div className="aspect-[4/5] bg-surface rounded-2xl border border-gray-800 flex items-center justify-center text-gray-500">
-          Main Image Preview
+        <div className="aspect-[4/5] bg-surface rounded-2xl border border-gray-800 flex items-center justify-center text-gray-500 relative overflow-hidden">
+          {MOCK_PRODUCT.image ? (
+            <Image 
+              src={MOCK_PRODUCT.image} 
+              alt={MOCK_PRODUCT.name} 
+              fill 
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          ) : (
+            "Main Image Preview"
+          )}
         </div>
         <div className="grid grid-cols-3 gap-4">
            <div className="aspect-square bg-surface rounded-lg border border-gray-800"></div>

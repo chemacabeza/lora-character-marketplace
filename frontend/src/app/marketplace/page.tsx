@@ -2,9 +2,9 @@ import LoRACard from "@/components/LoRACard";
 
 // Mock data for MVP
 const MOCK_PRODUCTS = [
-  { id: 1, name: "Emma from Ireland", description: "Highly consistent portrait LoRA.", baseModel: "SDXL", priceCents: 999 },
-  { id: 2, name: "Cyberpunk Knight", description: "Stylized armor and neon lighting.", baseModel: "Flux", priceCents: 1499 },
-  { id: 3, name: "Vintage Film Grain", description: "90s aesthetic style LoRA.", baseModel: "SD 1.5", priceCents: 499 },
+  { id: 1, name: "Emma from Ireland", description: "Highly consistent portrait LoRA.", baseModel: "SDXL", priceCents: 999, image: "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c0c1a0f6-7a0a-4319-96c8-e1f91aa9a311/original=true/129099726.jpeg" },
+  { id: 2, name: "Cyberpunk Knight", description: "Stylized armor and neon lighting.", baseModel: "Flux", priceCents: 1499, image: "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/99b10433-6c7b-46ef-8585-168022926cdb/original=true/129132369.jpeg" },
+  { id: 3, name: "Vintage Film Grain", description: "90s aesthetic style LoRA.", baseModel: "SD 1.5", priceCents: 499, image: "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/d581b472-e25a-4c7c-bfb2-d742316cffd3/original=true/128950588.jpeg" },
 ];
 
 export default function MarketplacePage() {

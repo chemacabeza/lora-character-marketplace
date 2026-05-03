@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function LoRACard({ product }: { product: any }) {
@@ -5,10 +6,19 @@ export default function LoRACard({ product }: { product: any }) {
     <Link href={`/marketplace/${product.id}`} className="group block">
       <div className="bg-surface border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1">
         <div className="aspect-[4/5] bg-gray-900 relative overflow-hidden">
-          {/* Mock image placeholder until real images are added */}
-          <div className="absolute inset-0 flex items-center justify-center text-gray-700 font-mono text-sm group-hover:scale-105 transition-transform duration-500 bg-gradient-to-br from-gray-800 to-gray-900">
-            [Image: {product.name}]
-          </div>
+          {product.image ? (
+            <Image 
+              src={product.image} 
+              alt={product.name} 
+              fill 
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center text-gray-700 font-mono text-sm group-hover:scale-105 transition-transform duration-500 bg-gradient-to-br from-gray-800 to-gray-900">
+              [Image: {product.name}]
+            </div>
+          )}
         </div>
         <div className="p-5 space-y-2">
           <div className="flex justify-between items-start">
