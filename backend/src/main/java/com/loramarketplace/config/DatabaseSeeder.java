@@ -19,7 +19,6 @@ public class DatabaseSeeder implements CommandLineRunner {
         if (productRepository.count() == 0) {
 
             Product p1 = new Product();
-            p1.setId(1L);
             p1.setName("Emma from Ireland");
             p1.setDescription("Age 26 · 1.75m");
             p1.setBaseModel("SDXL 1.0");
@@ -29,7 +28,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p1);
 
             Product p2 = new Product();
-            p2.setId(2L);
             p2.setName("Hildur from Iceland");
             p2.setDescription("Age 28 · 1.72m");
             p2.setBaseModel("SDXL 1.0");
@@ -39,7 +37,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p2);
 
             Product p3 = new Product();
-            p3.setId(3L);
             p3.setName("Elif from Turkey");
             p3.setDescription("Age 27 · 1.68m");
             p3.setBaseModel("SDXL 1.0");
@@ -49,7 +46,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p3);
 
             Product p4 = new Product();
-            p4.setId(4L);
             p4.setName("Marie from France");
             p4.setDescription("Age 25 · 1.70m");
             p4.setBaseModel("SDXL 1.0");
@@ -59,7 +55,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p4);
 
             Product p5 = new Product();
-            p5.setId(5L);
             p5.setName("Dilnoza from Uzbekistan");
             p5.setDescription("Age 24 · 1.65m");
             p5.setBaseModel("SDXL 1.0");
@@ -69,7 +64,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p5);
 
             Product p6 = new Product();
-            p6.setId(6L);
             p6.setName("Charlize from South Africa");
             p6.setDescription("Age 29 · 1.77m");
             p6.setBaseModel("SDXL 1.0");
@@ -79,7 +73,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p6);
 
             Product p7 = new Product();
-            p7.setId(7L);
             p7.setName("Alina from Belarus");
             p7.setDescription("Age 26 · 1.71m");
             p7.setBaseModel("SDXL 1.0");
@@ -89,7 +82,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p7);
 
             Product p8 = new Product();
-            p8.setId(8L);
             p8.setName("Gabriela from Romania");
             p8.setDescription("Age 25 · 1.69m");
             p8.setBaseModel("SDXL 1.0");
@@ -99,7 +91,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p8);
 
             Product p9 = new Product();
-            p9.setId(9L);
             p9.setName("Olga from Russia");
             p9.setDescription("Age 30 · 1.73m");
             p9.setBaseModel("SDXL 1.0");
@@ -109,7 +100,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p9);
 
             Product p10 = new Product();
-            p10.setId(10L);
             p10.setName("Naran from Mongolia");
             p10.setDescription("Age 24 · 1.63m");
             p10.setBaseModel("SDXL 1.0");
@@ -119,7 +109,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p10);
 
             Product p11 = new Product();
-            p11.setId(11L);
             p11.setName("Carmen from Spain");
             p11.setDescription("Age 28 · 1.68m");
             p11.setBaseModel("SDXL 1.0");
@@ -129,7 +118,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p11);
 
             Product p12 = new Product();
-            p12.setId(12L);
             p12.setName("Valentina from Colombia");
             p12.setDescription("Age 25 · 1.67m");
             p12.setBaseModel("SDXL 1.0");
@@ -139,7 +127,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p12);
 
             Product p13 = new Product();
-            p13.setId(13L);
             p13.setName("Priya from India");
             p13.setDescription("Age 27 · 1.62m");
             p13.setBaseModel("SDXL 1.0");
@@ -149,7 +136,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p13);
 
             Product p14 = new Product();
-            p14.setId(14L);
             p14.setName("Olena from Ukraine");
             p14.setDescription("Age 26 · 1.70m");
             p14.setBaseModel("SDXL 1.0");
@@ -159,7 +145,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p14);
 
             Product p15 = new Product();
-            p15.setId(15L);
             p15.setName("Zoya from Kazakhstan");
             p15.setDescription("Age 24 · 1.66m");
             p15.setBaseModel("SDXL 1.0");
@@ -169,7 +154,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p15);
 
             Product p16 = new Product();
-            p16.setId(16L);
             p16.setName("Dalia from Mexico");
             p16.setDescription("Age 26 · 1.65m");
             p16.setBaseModel("SDXL 1.0");
@@ -179,7 +163,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p16);
 
             Product p17 = new Product();
-            p17.setId(17L);
             p17.setName("Anna from Poland");
             p17.setDescription("Age 27 · 1.70m");
             p17.setBaseModel("SDXL 1.0");
@@ -189,7 +172,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p17);
 
             Product p18 = new Product();
-            p18.setId(18L);
             p18.setName("Nora from Norway");
             p18.setDescription("Age 25 · 1.72m");
             p18.setBaseModel("SDXL 1.0");
@@ -199,7 +181,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p18);
 
             Product p19 = new Product();
-            p19.setId(19L);
             p19.setName("Tina from Croatia");
             p19.setDescription("Age 26 · 1.69m");
             p19.setBaseModel("SDXL 1.0");
@@ -209,7 +190,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p19);
 
             Product p20 = new Product();
-            p20.setId(20L);
             p20.setName("Aaju from Greenland");
             p20.setDescription("Age 24 · 1.60m");
             p20.setBaseModel("SDXL 1.0");
@@ -219,7 +199,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p20);
 
             Product p21 = new Product();
-            p21.setId(21L);
             p21.setName("Maria from Brazil");
             p21.setDescription("Age 28 · 1.68m");
             p21.setBaseModel("SDXL 1.0");
@@ -229,7 +208,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p21);
 
             Product p22 = new Product();
-            p22.setId(22L);
             p22.setName("Anne from Denmark");
             p22.setDescription("Age 27 · 1.73m");
             p22.setBaseModel("SDXL 1.0");
@@ -239,7 +217,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p22);
 
             Product p23 = new Product();
-            p23.setId(23L);
             p23.setName("Milica from Serbia");
             p23.setDescription("Age 25 · 1.68m");
             p23.setBaseModel("SDXL 1.0");
@@ -249,7 +226,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p23);
 
             Product p24 = new Product();
-            p24.setId(24L);
             p24.setName("Amina from Morocco");
             p24.setDescription("Age 26 · 1.64m");
             p24.setBaseModel("SDXL 1.0");
@@ -259,7 +235,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p24);
 
             Product p25 = new Product();
-            p25.setId(25L);
             p25.setName("Sheila from Nigeria");
             p25.setDescription("Age 27 · 1.66m");
             p25.setBaseModel("SDXL 1.0");
@@ -269,7 +244,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p25);
 
             Product p26 = new Product();
-            p26.setId(26L);
             p26.setName("Stefi from Czech Republic");
             p26.setDescription("Age 24 · 1.70m");
             p26.setBaseModel("SDXL 1.0");
@@ -279,7 +253,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p26);
 
             Product p27 = new Product();
-            p27.setId(27L);
             p27.setName("Lara from Portugal");
             p27.setDescription("Age 26 · 1.67m");
             p27.setBaseModel("SDXL 1.0");
@@ -289,7 +262,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p27);
 
             Product p28 = new Product();
-            p28.setId(28L);
             p28.setName("Kasia from Poland");
             p28.setDescription("Age 25 · 1.69m");
             p28.setBaseModel("SDXL 1.0");
@@ -299,7 +271,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p28);
 
             Product p29 = new Product();
-            p29.setId(29L);
             p29.setName("Svetlana from Bulgaria");
             p29.setDescription("Age 28 · 1.71m");
             p29.setBaseModel("SDXL 1.0");
@@ -309,7 +280,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p29);
 
             Product p30 = new Product();
-            p30.setId(30L);
             p30.setName("Sofia from Greece");
             p30.setDescription("Age 26 · 1.68m");
             p30.setBaseModel("SDXL 1.0");
@@ -319,7 +289,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p30);
 
             Product p31 = new Product();
-            p31.setId(31L);
             p31.setName("Juanita from Argentina");
             p31.setDescription("Age 27 · 1.66m");
             p31.setBaseModel("SDXL 1.0");
@@ -329,7 +298,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p31);
 
             Product p32 = new Product();
-            p32.setId(32L);
             p32.setName("Giulia from Italy");
             p32.setDescription("Age 25 · 1.70m");
             p32.setBaseModel("SDXL 1.0");
@@ -339,7 +307,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p32);
 
             Product p33 = new Product();
-            p33.setId(33L);
             p33.setName("Fiona from Scotland");
             p33.setDescription("Age 26 · 1.72m");
             p33.setBaseModel("SDXL 1.0");
@@ -349,7 +316,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p33);
 
             Product p34 = new Product();
-            p34.setId(34L);
             p34.setName("Helga from Germany");
             p34.setDescription("Age 29 · 1.74m");
             p34.setBaseModel("SDXL 1.0");
@@ -359,7 +325,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p34);
 
             Product p35 = new Product();
-            p35.setId(35L);
             p35.setName("Hana from Japan");
             p35.setDescription("Age 24 · 1.60m");
             p35.setBaseModel("SDXL 1.0");
@@ -369,7 +334,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p35);
 
             Product p36 = new Product();
-            p36.setId(36L);
             p36.setName("Inga from Finland");
             p36.setDescription("Age 27 · 1.73m");
             p36.setBaseModel("SDXL 1.0");
@@ -379,7 +343,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p36);
 
             Product p37 = new Product();
-            p37.setId(37L);
             p37.setName("Mariam from Georgia");
             p37.setDescription("Age 25 · 1.65m");
             p37.setBaseModel("SDXL 1.0");
@@ -389,7 +352,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p37);
 
             Product p38 = new Product();
-            p38.setId(38L);
             p38.setName("Chen from China");
             p38.setDescription("Age 26 · 1.62m");
             p38.setBaseModel("SDXL 1.0");
@@ -399,7 +361,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p38);
 
             Product p39 = new Product();
-            p39.setId(39L);
             p39.setName("Anastasia from Russia");
             p39.setDescription("Age 25 · 1.71m");
             p39.setBaseModel("SDXL 1.0");
@@ -409,7 +370,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p39);
 
             Product p40 = new Product();
-            p40.setId(40L);
             p40.setName("Allison from USA");
             p40.setDescription("Age 28 · 1.69m");
             p40.setBaseModel("SDXL 1.0");
@@ -419,7 +379,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p40);
 
             Product p41 = new Product();
-            p41.setId(41L);
             p41.setName("Rabab from Egypt");
             p41.setDescription("Age 26 · 1.64m");
             p41.setBaseModel("SDXL 1.0");
@@ -429,7 +388,6 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p41);
 
             Product p42 = new Product();
-            p42.setId(42L);
             p42.setName("Iuliia from Ukraine");
             p42.setDescription("Age 27 · 1.70m");
             p42.setBaseModel("SDXL 1.0");
