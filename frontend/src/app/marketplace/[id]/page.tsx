@@ -10,7 +10,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const handleCheckout = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8080/api/orders", {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+      const res = await fetch(`${API_URL}/api/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ productId: parseInt(params.id) })
