@@ -1,25 +1,26 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
-
-// Mock data
-const MOCK_PRODUCT = { 
-  id: 1, 
-  name: "Emma from Ireland", 
-  description: "Highly consistent portrait LoRA.", 
-  baseModel: "SDXL", 
-  priceCents: 999,
-  image: "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c0c1a0f6-7a0a-4319-96c8-e1f91aa9a311/original=true/129099726.jpeg"
-};
+import { useState, useEffect } from "react";
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const [loading, setLoading] = useState(false);
+  const [product, setProduct] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch(`/api/products/${params.id}`)
+      .then(res => {
+        if (!res.ok) throw new Error("Product not found");
+        return res.json();
+      })
+      .then(data => setProduct(data))
+      .catch(err => setError(err.message));
+  }, [params.id]);
 
   const handleCheckout = async () => {
     setLoading(true);
     try {
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
-      const res = await fetch(`${API_URL}/api/orders`, {
+      const res = await fetch(`/api/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ productId: parseInt(params.id) })
@@ -27,6 +28,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       const data = await res.json();
       if (data.url) {
         window.location.href = data.url; // Redirect to Stripe
+      } else {
+        alert("Checkout failed. Please try again.");
       }
     } catch (err) {
       alert("Error initiating checkout. Is the backend running?");
@@ -35,15 +38,23 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     }
   };
 
+  if (error) {
+    return <div className="text-red-500 text-center text-xl mt-20">{error}</div>;
+  }
+
+  if (!product) {
+    return <div className="text-gray-400 text-center text-xl mt-20 animate-pulse">Loading product details...</div>;
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      {/* Image Gallery Mock */}
+      {/* Image Gallery */}
       <div className="space-y-4">
         <div className="aspect-[4/5] bg-surface rounded-2xl border border-gray-800 flex items-center justify-center text-gray-500 relative overflow-hidden">
-          {MOCK_PRODUCT.image ? (
+          {product.imageUrl ? (
             <Image 
-              src={MOCK_PRODUCT.image} 
-              alt={MOCK_PRODUCT.name} 
+              src={product.imageUrl} 
+              alt={product.name} 
               fill 
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -53,26 +64,26 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           )}
         </div>
         <div className="grid grid-cols-3 gap-4">
-           <div className="aspect-square bg-surface rounded-lg border border-gray-800"></div>
-           <div className="aspect-square bg-surface rounded-lg border border-gray-800"></div>
-           <div className="aspect-square bg-surface rounded-lg border border-gray-800"></div>
+           <div className="aspect-square bg-surface rounded-lg border border-gray-800 opacity-50"></div>
+           <div className="aspect-square bg-surface rounded-lg border border-gray-800 opacity-50"></div>
+           <div className="aspect-square bg-surface rounded-lg border border-gray-800 opacity-50"></div>
         </div>
       </div>
 
       {/* Details */}
       <div className="space-y-6">
         <div>
-          <h1 className="text-4xl font-bold">{MOCK_PRODUCT.name}</h1>
-          <p className="text-2xl text-primary font-semibold mt-2">€{(MOCK_PRODUCT.priceCents / 100).toFixed(2)}</p>
+          <h1 className="text-4xl font-bold">{product.name}</h1>
+          <p className="text-2xl text-primary font-semibold mt-2">€{(product.priceCents / 100).toFixed(2)}</p>
         </div>
         
         <div className="prose prose-invert">
-          <p>{MOCK_PRODUCT.description}</p>
+          <p>{product.description}</p>
         </div>
 
         <div className="bg-surface p-4 rounded-xl border border-gray-800 flex justify-between items-center">
           <span className="text-gray-400">Base Model</span>
-          <span className="font-mono bg-gray-800 px-3 py-1 rounded text-sm">{MOCK_PRODUCT.baseModel}</span>
+          <span className="font-mono bg-gray-800 px-3 py-1 rounded text-sm">{product.baseModel}</span>
         </div>
 
         <button 
