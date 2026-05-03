@@ -9,6 +9,7 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+  },
   async rewrites() {
     return [
       {
