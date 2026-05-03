@@ -13,7 +13,7 @@ export default function LoRACard({ product }: { product: any }) {
         <div className="p-5 space-y-2">
           <div className="flex justify-between items-start">
             <h3 className="text-lg font-bold truncate pr-2">{product.name}</h3>
-            <span className="text-primary font-semibold">${(product.priceCents / 100).toFixed(2)}</span>
+            <span className="text-primary font-semibold">€{(product.priceCents / 100).toFixed(2)}</span>
           </div>
           <p className="text-sm text-gray-400 truncate">{product.description}</p>
           <div className="flex items-center gap-2 pt-2">

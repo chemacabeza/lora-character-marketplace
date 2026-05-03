@@ -45,7 +45,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       <div className="space-y-6">
         <div>
           <h1 className="text-4xl font-bold">{MOCK_PRODUCT.name}</h1>
-          <p className="text-2xl text-primary font-semibold mt-2">${(MOCK_PRODUCT.priceCents / 100).toFixed(2)}</p>
+          <p className="text-2xl text-primary font-semibold mt-2">€{(MOCK_PRODUCT.priceCents / 100).toFixed(2)}</p>
         </div>
         
         <div className="prose prose-invert">
