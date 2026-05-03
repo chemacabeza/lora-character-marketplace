@@ -1,21 +1,13 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { LORAS } from "@/lib/data";
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const [loading, setLoading] = useState(false);
-  const [product, setProduct] = useState<any>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch(`/api/products/${params.id}`)
-      .then(res => {
-        if (!res.ok) throw new Error("Product not found");
-        return res.json();
-      })
-      .then(data => setProduct(data))
-      .catch(err => setError(err.message));
-  }, [params.id]);
+  
+  // Find product from static data instead of fetching from backend to ensure it renders instantly
+  const product = LORAS.find(p => p.id === parseInt(params.id));
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -38,12 +30,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     }
   };
 
-  if (error) {
-    return <div className="text-red-500 text-center text-xl mt-20">{error}</div>;
-  }
-
   if (!product) {
-    return <div className="text-gray-400 text-center text-xl mt-20 animate-pulse">Loading product details...</div>;
+    return <div className="text-red-500 text-center text-xl mt-20">Product not found in catalog.</div>;
   }
 
   return (
@@ -51,9 +39,9 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
       {/* Image Gallery */}
       <div className="space-y-4">
         <div className="aspect-[4/5] bg-surface rounded-2xl border border-gray-800 flex items-center justify-center text-gray-500 relative overflow-hidden">
-          {product.imageUrl ? (
+          {product.image ? (
             <Image 
-              src={product.imageUrl} 
+              src={product.image} 
               alt={product.name} 
               fill 
               className="object-cover"
