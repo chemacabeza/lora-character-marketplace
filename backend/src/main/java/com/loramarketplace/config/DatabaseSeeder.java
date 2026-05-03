@@ -23,7 +23,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p1.setDescription("Age 26 · 1.75m");
             p1.setBaseModel("SDXL 1.0");
             p1.setPriceCents(999);
-            p1.setImageUrl("/images/loras/emma.jpg");
+            p1.setImageUrl("/images/loras/emma_new.jpg");
             p1.setSafetensorsS3Key("public/loras/1/model.safetensors");
             productRepository.save(p1);
 
@@ -41,7 +41,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p3.setDescription("Age 27 · 1.68m");
             p3.setBaseModel("SDXL 1.0");
             p3.setPriceCents(999);
-            p3.setImageUrl("/images/loras/elif.jpg");
+            p3.setImageUrl("/images/loras/elif_new.jpg");
             p3.setSafetensorsS3Key("public/loras/3/model.safetensors");
             productRepository.save(p3);
 
@@ -59,7 +59,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p5.setDescription("Age 24 · 1.65m");
             p5.setBaseModel("SDXL 1.0");
             p5.setPriceCents(999);
-            p5.setImageUrl("/images/loras/dilnoza.jpg");
+            p5.setImageUrl("/images/loras/dilnoza_new.jpg");
             p5.setSafetensorsS3Key("public/loras/5/model.safetensors");
             productRepository.save(p5);
 
@@ -68,7 +68,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p6.setDescription("Age 29 · 1.77m");
             p6.setBaseModel("SDXL 1.0");
             p6.setPriceCents(999);
-            p6.setImageUrl("/images/loras/charlize.jpg");
+            p6.setImageUrl("/images/loras/charlize_new.jpg");
             p6.setSafetensorsS3Key("public/loras/6/model.safetensors");
             productRepository.save(p6);
 
@@ -77,7 +77,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p7.setDescription("Age 26 · 1.71m");
             p7.setBaseModel("SDXL 1.0");
             p7.setPriceCents(999);
-            p7.setImageUrl("/images/loras/alina.jpg");
+            p7.setImageUrl("/images/loras/alina_new.jpg");
             p7.setSafetensorsS3Key("public/loras/7/model.safetensors");
             productRepository.save(p7);
 
@@ -86,7 +86,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p8.setDescription("Age 25 · 1.69m");
             p8.setBaseModel("SDXL 1.0");
             p8.setPriceCents(999);
-            p8.setImageUrl("/images/loras/gabriela.jpg");
+            p8.setImageUrl("/images/loras/gabriela_new.jpg");
             p8.setSafetensorsS3Key("public/loras/8/model.safetensors");
             productRepository.save(p8);
 
@@ -95,7 +95,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p9.setDescription("Age 30 · 1.73m");
             p9.setBaseModel("SDXL 1.0");
             p9.setPriceCents(999);
-            p9.setImageUrl("/images/loras/olga.jpg");
+            p9.setImageUrl("/images/loras/olga_new.jpg");
             p9.setSafetensorsS3Key("public/loras/9/model.safetensors");
             productRepository.save(p9);
 
@@ -113,7 +113,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p11.setDescription("Age 28 · 1.68m");
             p11.setBaseModel("SDXL 1.0");
             p11.setPriceCents(999);
-            p11.setImageUrl("/images/loras/carmen.jpg");
+            p11.setImageUrl("/images/loras/carmen_new.jpg");
             p11.setSafetensorsS3Key("public/loras/11/model.safetensors");
             productRepository.save(p11);
 
@@ -185,7 +185,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p19.setDescription("Age 26 · 1.69m");
             p19.setBaseModel("SDXL 1.0");
             p19.setPriceCents(999);
-            p19.setImageUrl("/images/loras/tina.jpg");
+            p19.setImageUrl("/images/loras/tina_new.jpg");
             p19.setSafetensorsS3Key("public/loras/19/model.safetensors");
             productRepository.save(p19);
 
@@ -194,7 +194,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p20.setDescription("Age 24 · 1.60m");
             p20.setBaseModel("SDXL 1.0");
             p20.setPriceCents(999);
-            p20.setImageUrl("/images/loras/aaju.jpg");
+            p20.setImageUrl("/images/loras/aaju_new.jpg");
             p20.setSafetensorsS3Key("public/loras/20/model.safetensors");
             productRepository.save(p20);
 
@@ -230,34 +230,34 @@ public class DatabaseSeeder implements CommandLineRunner {
             p24.setDescription("Age 26 · 1.64m");
             p24.setBaseModel("SDXL 1.0");
             p24.setPriceCents(999);
-            p24.setImageUrl("/images/loras/amina.png");
+            p24.setImageUrl("/images/loras/amina_new.jpg");
             p24.setSafetensorsS3Key("public/loras/24/model.safetensors");
             productRepository.save(p24);
 
             Product p25 = new Product();
-            p25.setName("Sheila from Nigeria");
+            p25.setName("Sheila from Peru");
             p25.setDescription("Age 27 · 1.66m");
             p25.setBaseModel("SDXL 1.0");
             p25.setPriceCents(999);
-            p25.setImageUrl("/images/loras/sheila.jpg");
+            p25.setImageUrl("/images/loras/sheila_new.jpg");
             p25.setSafetensorsS3Key("public/loras/25/model.safetensors");
             productRepository.save(p25);
 
             Product p26 = new Product();
-            p26.setName("Stefi from Czech Republic");
+            p26.setName("Stefi from Germany");
             p26.setDescription("Age 24 · 1.70m");
             p26.setBaseModel("SDXL 1.0");
             p26.setPriceCents(999);
-            p26.setImageUrl("/images/loras/stefi.jpg");
+            p26.setImageUrl("/images/loras/stefi_new.jpg");
             p26.setSafetensorsS3Key("public/loras/26/model.safetensors");
             productRepository.save(p26);
 
             Product p27 = new Product();
-            p27.setName("Lara from Portugal");
+            p27.setName("Lara from Syria");
             p27.setDescription("Age 26 · 1.67m");
             p27.setBaseModel("SDXL 1.0");
             p27.setPriceCents(999);
-            p27.setImageUrl("/images/loras/lara.jpg");
+            p27.setImageUrl("/images/loras/lara_new.jpg");
             p27.setSafetensorsS3Key("public/loras/27/model.safetensors");
             productRepository.save(p27);
 
@@ -271,29 +271,29 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p28);
 
             Product p29 = new Product();
-            p29.setName("Svetlana from Bulgaria");
+            p29.setName("Svetlana from Russia");
             p29.setDescription("Age 28 · 1.71m");
             p29.setBaseModel("SDXL 1.0");
             p29.setPriceCents(999);
-            p29.setImageUrl("/images/loras/svetlana.jpg");
+            p29.setImageUrl("/images/loras/svetlana_new.jpg");
             p29.setSafetensorsS3Key("public/loras/29/model.safetensors");
             productRepository.save(p29);
 
             Product p30 = new Product();
-            p30.setName("Sofia from Greece");
+            p30.setName("Sofia from Finland");
             p30.setDescription("Age 26 · 1.68m");
             p30.setBaseModel("SDXL 1.0");
             p30.setPriceCents(999);
-            p30.setImageUrl("/images/loras/sofia.jpg");
+            p30.setImageUrl("/images/loras/sofia_new.jpg");
             p30.setSafetensorsS3Key("public/loras/30/model.safetensors");
             productRepository.save(p30);
 
             Product p31 = new Product();
-            p31.setName("Juanita from Argentina");
+            p31.setName("Juanita from Cuba");
             p31.setDescription("Age 27 · 1.66m");
             p31.setBaseModel("SDXL 1.0");
             p31.setPriceCents(999);
-            p31.setImageUrl("/images/loras/juanita.jpg");
+            p31.setImageUrl("/images/loras/juanita_new.jpg");
             p31.setSafetensorsS3Key("public/loras/31/model.safetensors");
             productRepository.save(p31);
 
@@ -302,7 +302,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p32.setDescription("Age 25 · 1.70m");
             p32.setBaseModel("SDXL 1.0");
             p32.setPriceCents(999);
-            p32.setImageUrl("/images/loras/giulia.jpg");
+            p32.setImageUrl("/images/loras/giulia_new.jpg");
             p32.setSafetensorsS3Key("public/loras/32/model.safetensors");
             productRepository.save(p32);
 
@@ -311,16 +311,16 @@ public class DatabaseSeeder implements CommandLineRunner {
             p33.setDescription("Age 26 · 1.72m");
             p33.setBaseModel("SDXL 1.0");
             p33.setPriceCents(999);
-            p33.setImageUrl("/images/loras/fiona.jpg");
+            p33.setImageUrl("/images/loras/fiona_new.jpg");
             p33.setSafetensorsS3Key("public/loras/33/model.safetensors");
             productRepository.save(p33);
 
             Product p34 = new Product();
-            p34.setName("Helga from Germany");
+            p34.setName("Helga from Sweden");
             p34.setDescription("Age 29 · 1.74m");
             p34.setBaseModel("SDXL 1.0");
             p34.setPriceCents(999);
-            p34.setImageUrl("/images/loras/helga.jpg");
+            p34.setImageUrl("/images/loras/helga_new.jpg");
             p34.setSafetensorsS3Key("public/loras/34/model.safetensors");
             productRepository.save(p34);
 
@@ -334,20 +334,20 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p35);
 
             Product p36 = new Product();
-            p36.setName("Inga from Finland");
+            p36.setName("Inga from Germany");
             p36.setDescription("Age 27 · 1.73m");
             p36.setBaseModel("SDXL 1.0");
             p36.setPriceCents(999);
-            p36.setImageUrl("/images/loras/inga.jpg");
+            p36.setImageUrl("/images/loras/inga_new.jpg");
             p36.setSafetensorsS3Key("public/loras/36/model.safetensors");
             productRepository.save(p36);
 
             Product p37 = new Product();
-            p37.setName("Mariam from Georgia");
+            p37.setName("Mariam from Guinea");
             p37.setDescription("Age 25 · 1.65m");
             p37.setBaseModel("SDXL 1.0");
             p37.setPriceCents(999);
-            p37.setImageUrl("/images/loras/mariam.png");
+            p37.setImageUrl("/images/loras/mariam_new.jpg");
             p37.setSafetensorsS3Key("public/loras/37/model.safetensors");
             productRepository.save(p37);
 
@@ -365,7 +365,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p39.setDescription("Age 25 · 1.71m");
             p39.setBaseModel("SDXL 1.0");
             p39.setPriceCents(999);
-            p39.setImageUrl("/images/loras/anastasia.png");
+            p39.setImageUrl("/images/loras/anastasia_new.jpg");
             p39.setSafetensorsS3Key("public/loras/39/model.safetensors");
             productRepository.save(p39);
 
@@ -374,16 +374,16 @@ public class DatabaseSeeder implements CommandLineRunner {
             p40.setDescription("Age 28 · 1.69m");
             p40.setBaseModel("SDXL 1.0");
             p40.setPriceCents(999);
-            p40.setImageUrl("/images/loras/allison.jpg");
+            p40.setImageUrl("/images/loras/allison_new.jpg");
             p40.setSafetensorsS3Key("public/loras/40/model.safetensors");
             productRepository.save(p40);
 
             Product p41 = new Product();
-            p41.setName("Rabab from Egypt");
+            p41.setName("Rabab from Morocco");
             p41.setDescription("Age 26 · 1.64m");
             p41.setBaseModel("SDXL 1.0");
             p41.setPriceCents(999);
-            p41.setImageUrl("/images/loras/rabab.jpg");
+            p41.setImageUrl("/images/loras/rabab_new.jpg");
             p41.setSafetensorsS3Key("public/loras/41/model.safetensors");
             productRepository.save(p41);
 
@@ -392,7 +392,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p42.setDescription("Age 27 · 1.70m");
             p42.setBaseModel("SDXL 1.0");
             p42.setPriceCents(999);
-            p42.setImageUrl("/images/loras/iuliia.jpg");
+            p42.setImageUrl("/images/loras/iuliia_new.jpg");
             p42.setSafetensorsS3Key("public/loras/42/model.safetensors");
             productRepository.save(p42);
 
