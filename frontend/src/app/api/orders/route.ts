@@ -27,8 +27,8 @@ export async function POST(req: Request) {
     
     // Graceful fallback if backend is missing or offline
     const origin = req.headers.get("origin") || "https://prolific-amazement-production-1c52.up.railway.app";
-    // We redirect to /dashboard because /checkout/success doesn't exist yet
-    const fallbackUrl = `${origin}/dashboard?checkout_success=true&session_id=mock_session_frontend_${productId}`;
+    // We redirect to /checkout/success to provide visual confirmation of the mock purchase
+    const fallbackUrl = `${origin}/checkout/success?session_id=mock_session_frontend_${productId}`;
     
     return NextResponse.json({ url: fallbackUrl });
   } catch (error) {
