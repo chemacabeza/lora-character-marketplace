@@ -145,29 +145,29 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p14);
 
             Product p15 = new Product();
-            p15.setName("Zoya from Kazakhstan");
+            p15.setName("Zoya from Belarus");
             p15.setDescription("Age 24 · 1.66m");
             p15.setBaseModel("SDXL 1.0");
             p15.setPriceCents(999);
-            p15.setImageUrl("/images/loras/zoya.jpg");
+            p15.setImageUrl("/images/loras/zoya_new2.jpg");
             p15.setSafetensorsS3Key("public/loras/15/model.safetensors");
             productRepository.save(p15);
 
             Product p16 = new Product();
-            p16.setName("Dalia from Mexico");
+            p16.setName("Dalia from Lithuania");
             p16.setDescription("Age 26 · 1.65m");
             p16.setBaseModel("SDXL 1.0");
             p16.setPriceCents(999);
-            p16.setImageUrl("/images/loras/dalia.jpg");
+            p16.setImageUrl("/images/loras/dalia_new2.jpg");
             p16.setSafetensorsS3Key("public/loras/16/model.safetensors");
             productRepository.save(p16);
 
             Product p17 = new Product();
-            p17.setName("Anna from Poland");
+            p17.setName("Anna from Latvia");
             p17.setDescription("Age 27 · 1.70m");
             p17.setBaseModel("SDXL 1.0");
             p17.setPriceCents(999);
-            p17.setImageUrl("/images/loras/anna.jpg");
+            p17.setImageUrl("/images/loras/anna_new2.jpg");
             p17.setSafetensorsS3Key("public/loras/17/model.safetensors");
             productRepository.save(p17);
 
@@ -181,11 +181,11 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p18);
 
             Product p19 = new Product();
-            p19.setName("Tina from Croatia");
+            p19.setName("Tina from Slovenia");
             p19.setDescription("Age 26 · 1.69m");
             p19.setBaseModel("SDXL 1.0");
             p19.setPriceCents(999);
-            p19.setImageUrl("/images/loras/tina_new.jpg");
+            p19.setImageUrl("/images/loras/tina_new2.jpg");
             p19.setSafetensorsS3Key("public/loras/19/model.safetensors");
             productRepository.save(p19);
 
@@ -199,20 +199,20 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p20);
 
             Product p21 = new Product();
-            p21.setName("Maria from Brazil");
+            p21.setName("Maria from Portugal");
             p21.setDescription("Age 28 · 1.68m");
             p21.setBaseModel("SDXL 1.0");
             p21.setPriceCents(999);
-            p21.setImageUrl("/images/loras/maria.jpg");
+            p21.setImageUrl("/images/loras/maria_new2.jpg");
             p21.setSafetensorsS3Key("public/loras/21/model.safetensors");
             productRepository.save(p21);
 
             Product p22 = new Product();
-            p22.setName("Anne from Denmark");
+            p22.setName("Anne from Netherlands");
             p22.setDescription("Age 27 · 1.73m");
             p22.setBaseModel("SDXL 1.0");
             p22.setPriceCents(999);
-            p22.setImageUrl("/images/loras/anne.jpg");
+            p22.setImageUrl("/images/loras/anne_new2.jpg");
             p22.setSafetensorsS3Key("public/loras/22/model.safetensors");
             productRepository.save(p22);
 
@@ -266,7 +266,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             p28.setDescription("Age 25 · 1.69m");
             p28.setBaseModel("SDXL 1.0");
             p28.setPriceCents(999);
-            p28.setImageUrl("/images/loras/kasia.jpg");
+            p28.setImageUrl("/images/loras/kasia_new2.jpg");
             p28.setSafetensorsS3Key("public/loras/28/model.safetensors");
             productRepository.save(p28);
 
