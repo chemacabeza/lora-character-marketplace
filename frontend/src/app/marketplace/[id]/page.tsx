@@ -52,9 +52,20 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           )}
         </div>
         <div className="grid grid-cols-3 gap-4">
-           <div className="aspect-square bg-surface rounded-lg border border-gray-800 opacity-50"></div>
-           <div className="aspect-square bg-surface rounded-lg border border-gray-800 opacity-50"></div>
-           <div className="aspect-square bg-surface rounded-lg border border-gray-800 opacity-50"></div>
+           {(product as any).gallery && (product as any).gallery.map((img: string, idx: number) => (
+             <div key={idx} className="aspect-square bg-surface rounded-lg border border-gray-800 relative overflow-hidden transition-all duration-300 hover:border-primary">
+               <Image 
+                 src={img} 
+                 alt={`${product.name} gallery image ${idx + 1}`} 
+                 fill 
+                 className="object-cover"
+                 sizes="(max-width: 768px) 33vw, 16vw"
+               />
+             </div>
+           ))}
+           {(!(product as any).gallery || (product as any).gallery.length < 3) && Array.from({ length: 3 - ((product as any).gallery?.length || 0) }).map((_, idx) => (
+             <div key={`empty-${idx}`} className="aspect-square bg-surface rounded-lg border border-gray-800 opacity-50"></div>
+           ))}
         </div>
       </div>
 
