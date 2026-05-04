@@ -82,7 +82,7 @@ public class DatabaseSeeder implements CommandLineRunner {
             productRepository.save(p7);
 
             Product p8 = new Product();
-            p8.setName("Gabriela from Romania");
+            p8.setName("Gabriela from Brazil");
             p8.setDescription("Age 25 · 1.69m");
             p8.setBaseModel("SDXL 1.0");
             p8.setPriceCents(999);
