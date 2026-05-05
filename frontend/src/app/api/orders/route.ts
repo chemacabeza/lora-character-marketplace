@@ -6,6 +6,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const productId = body.productId;
+    const customerEmail = body.email;
 
     // Look up product from static catalog
     const product = LORAS.find(p => p.id === productId);
@@ -21,9 +22,11 @@ export async function POST(req: Request) {
 
       const origin = req.headers.get("origin") || "https://prolific-amazement-production-1c52.up.railway.app";
 
-      const session = await stripe.checkout.sessions.create({
+      const sessionParams: any = {
         mode: 'payment',
+        payment_method_types: ['card', 'paypal'],
         billing_address_collection: 'required',
+        customer_creation: 'always',
         line_items: [
           {
             quantity: 1,
@@ -43,7 +46,14 @@ export async function POST(req: Request) {
           product_id: product.id.toString(),
           product_key: product.key,
         },
-      });
+      };
+
+      // Pre-fill email if provided from frontend
+      if (customerEmail) {
+        sessionParams.customer_email = customerEmail;
+      }
+
+      const session = await stripe.checkout.sessions.create(sessionParams);
 
       return NextResponse.json({ url: session.url });
     }
