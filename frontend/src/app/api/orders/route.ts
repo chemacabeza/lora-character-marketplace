@@ -1,33 +1,54 @@
 import { NextResponse } from 'next/server';
+import Stripe from 'stripe';
+import { LORAS } from '@/lib/data';
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const productId = body.productId;
+
+    // Look up product from static catalog
+    const product = LORAS.find(p => p.id === productId);
+    if (!product) {
+      return NextResponse.json({ error: "Product not found" }, { status: 404 });
+    }
+
+    const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
     
-    // Try to hit backend if BACKEND_URL is set
-    const backendUrl = process.env.BACKEND_URL;
-    if (backendUrl) {
-      try {
-        const res = await fetch(`${backendUrl}/api/orders`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body)
-        });
-        
-        if (res.ok) {
-          const data = await res.json();
-          return NextResponse.json(data);
-        }
-        console.error("Backend returned status:", res.status);
-      } catch (e) {
-        console.error("Failed to reach backend:", e);
-      }
+    if (stripeSecretKey) {
+      // Real Stripe Checkout Session
+      const stripe = new Stripe(stripeSecretKey);
+
+      const origin = req.headers.get("origin") || "https://prolific-amazement-production-1c52.up.railway.app";
+
+      const session = await stripe.checkout.sessions.create({
+        mode: 'payment',
+        line_items: [
+          {
+            quantity: 1,
+            price_data: {
+              currency: 'eur',
+              unit_amount: product.priceCents,
+              product_data: {
+                name: product.name,
+                description: `${product.baseModel} LoRA Character – ${product.description}`,
+              },
+            },
+          },
+        ],
+        success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${origin}/marketplace/${product.id}`,
+        metadata: {
+          product_id: product.id.toString(),
+          product_key: product.key,
+        },
+      });
+
+      return NextResponse.json({ url: session.url });
     }
     
-    // Graceful fallback if backend is missing or offline
+    // Graceful fallback if STRIPE_SECRET_KEY is not set (local dev)
     const origin = req.headers.get("origin") || "https://prolific-amazement-production-1c52.up.railway.app";
-    // We redirect to /checkout/success to provide visual confirmation of the mock purchase
     const fallbackUrl = `${origin}/checkout/success?session_id=mock_session_frontend_${productId}`;
     
     return NextResponse.json({ url: fallbackUrl });
