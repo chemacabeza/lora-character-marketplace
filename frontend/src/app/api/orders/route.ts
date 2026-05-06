@@ -22,9 +22,11 @@ export async function POST(req: Request) {
 
       const origin = req.headers.get("origin") || "https://prolific-amazement-production-1c52.up.railway.app";
 
-      const sessionParams: any = {
+      // Use dynamic payment methods — Stripe automatically shows all enabled
+      // methods from the Dashboard (Card, PayPal, Klarna, Bizum, Google Pay, etc.)
+      // based on the customer's region and currency.
+      const sessionParams: Stripe.Checkout.SessionCreateParams = {
         mode: 'payment',
-        payment_method_types: ['card', 'paypal'],
         billing_address_collection: 'required',
         customer_creation: 'always',
         line_items: [
